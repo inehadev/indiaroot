@@ -39,7 +39,7 @@ const page = () => {
             } else {
                 toast({
                     title: "sucess",
-                    description: "User Login Sucessfully"
+                    description: "User Logined Sucessfully"
 
                 })
 
@@ -50,7 +50,7 @@ const page = () => {
 
         } catch (error: any) {
             console.log(error)
-            const errorMessage = error.response?.data?.message || "An error occurred during Login";
+            const errorMessage = error.response?.data?.message || "An error occurred in Login";
 
             toast({
                 title: "Error",
