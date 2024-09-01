@@ -10,7 +10,7 @@ import { signIn } from 'next-auth/react'
 
 
 
-const page = () => {
+const Page = () => {
     const [name, setname] = useState("");
     const [email, setmail] = useState("");
     const [password, setpassword] = useState("");
@@ -84,4 +84,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

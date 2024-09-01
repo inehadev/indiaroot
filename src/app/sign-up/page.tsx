@@ -9,7 +9,7 @@ import { useToast } from '@/components/ui/use-toast'
 
 
 
-const page = () => {
+const Page = () => {
     const [name, setname] = useState("");
     const [email, setmail] = useState("");
     const [password, setpassword] = useState("");
@@ -86,4 +86,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
