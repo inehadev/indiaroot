@@ -7,27 +7,28 @@ import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import { useToast } from '@/components/ui/use-toast'
 import { signIn } from 'next-auth/react'
+import Link from 'next/link'
 
 
 
 const Page = () => {
-    const [name, setname] = useState("");
     const [email, setmail] = useState("");
     const [password, setpassword] = useState("");
+    const[loading , setloading]=useState(false);
     const router = useRouter();
     const { toast } = useToast();
 
-    const handleSignIn = async (data:any) => {
-        try {
-
-            const response = await signIn('credentials', {
-                redirect: false,
-                identifier: data.email || data.username,
-                password: data.password
-
-
-            })
+    const handleSignIn = async (data: any) => {
+      setloading(true);
+      try{
+      const response = await signIn('credentials', {
+        redirect: false,
+        email, 
+        password
+      });
+    
             console.log(response)
+          
             if (response?.error) {
                 toast({
                     title: "Failed",
@@ -43,9 +44,10 @@ const Page = () => {
 
                 })
 
+                router.replace('/')
             }
 
-            router.replace('/')
+          
 
 
         } catch (error: any) {
@@ -57,21 +59,27 @@ const Page = () => {
                 description: errorMessage,
             });
 
+        }finally{
+            setloading(false)
         }
 
     }
     return (
         <>
-            <div className='flex  justify-center items-center bg-gray-50  min-h-screen' >
+            <div className='flex  flex-col gap-10 justify-center items-center bg-gray-50  min-h-screen' >
+                <h2 className='flex justify-center  text-5xl items-center'>IndiaRoot</h2>
 
-                <div className=' flex-col h-[300px] justify-center text-center bg-white border rounded-md  w-[400px]'>
-                    <h1 className='text-center items-center text-3xl mt-5  font-medium'>Sign-In</h1>
+                <div className=' flex-col h-[340px] justify-center text-center bg-white border rounded-md  w-[400px]'>
+                    <h1 className='text-center items-center text-3xl mt-5 opacity-85 font-medium'>Sign-In</h1>
                     <div className='flex-col  mt-8 mx-10'>
 
                         <Input className='mt-5' placeholder='email' value={email} type='email' onChange={(e) => setmail(e.target.value)} />
                         <Input className='mt-5' placeholder='password' value={password} type='password' onChange={(e) => setpassword(e.target.value)} />
 
                         <Button className='mt-7 w-full' onClick={handleSignIn}>SIGN-IN</Button>
+
+                        <p className='mt-5 opacity-80 font-normal'>Already have an account?<Link href="/sign-up">Sign-Up</Link></p>
+
 
 
 

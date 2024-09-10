@@ -19,11 +19,11 @@ export const authOption : NextAuthOptions={
                 await dbConnect()
                 try {
                     const user = await User.findOne({
-                        $or:[
-                           { email:credentials.identifier},
-                           {password:credentials.identifier}
+                    
+                            email:credentials.email
+                        
 
-                        ]
+                        
                     })
 
                     if(!user){
@@ -45,7 +45,7 @@ export const authOption : NextAuthOptions={
         })
     ],
     pages:{
-        signIn:'/sign-in'
+        signIn:"/sign-in"
 
     },
     callbacks:{
