@@ -53,10 +53,12 @@ const hero = () => {
         </div>
         <Separator className='mt-7' />
 
-        <div className='bg-opacity-55'>
-          <div className='bg-white rounded-lg mx-5 justify-center items-center h-[70px] mt-10 flex gap-8'>
+
+       
+        <div className='  mx-10 rounded-lg '>
+          <div className=' rounded-lg   bg-white border border-gray-100 justify-start px-4   items-center h-[70px] mt-5 flex gap-5'>
             <Avatar >
-              <AvatarImage sizes='lg' src="https://github.com/shadcn.png" />
+              <AvatarImage className='' src="https://github.com/shadcn.png" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
 
@@ -72,6 +74,21 @@ const hero = () => {
 
             <Avatar >
               <AvatarImage sizes='lg' src="https://github.com/shadcn.png" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+
+            <Avatar >
+              <AvatarImage className='' src="https://github.com/shadcn.png" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+
+            <Avatar >
+              <AvatarImage className='' src="https://github.com/shadcn.png" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+
+            <Avatar >
+              <AvatarImage className='' src="https://github.com/shadcn.png" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
           </div>
