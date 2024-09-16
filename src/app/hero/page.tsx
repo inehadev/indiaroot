@@ -10,9 +10,10 @@ import { Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Separator } from "@/components/ui/separator"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import Post from '@/app/component/Post'
 
 
-const hero = () => {
+const Hero = () => {
   return (
     <div className='flex min-h-screen justify-center ' >
 
@@ -53,7 +54,8 @@ const hero = () => {
         </div>
         <Separator className='mt-7' />
 
-
+  
+        {/*  profile   */}
        
         <div className='  mx-10 rounded-lg '>
           <div className=' rounded-lg   bg-white border border-gray-100 justify-start px-4   items-center h-[70px] mt-5 flex gap-5'>
@@ -95,6 +97,13 @@ const hero = () => {
 
         </div>
 
+      {/*   post  */}
+
+     
+        <Post/>
+
+     
+
 
 
 
@@ -112,4 +121,4 @@ const hero = () => {
   )
 }
 
-export default hero
+export default Hero
