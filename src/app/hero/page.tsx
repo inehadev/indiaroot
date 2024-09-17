@@ -42,9 +42,9 @@ const Hero = () => {
 
       {/*   post  */}
 
-      <div className=' flex-grow  '>
+      <div className='  bg-opacity-10 '>
 
-        <div className='flex justify-between gap-24 mx-5 mt-8 '> <div className='flex flex-grow  mx-4   rounded-full border py-1 ' > <Input placeholder='Search  for friends , groups or colleges ' className='bg-transparent w-full  border-none placeholder:opacity-90 placeholder:ml-20'>
+        <div className='flex justify-between gap-16 mx-5 mt-8 '> <div className='flex flex-grow  mx-4   rounded-full border py-1 ' > <Input placeholder='Search  for friends , groups or colleges ' className='bg-transparent w-full  border-none placeholder:opacity-90 placeholder:ml-20'>
         </Input><Search className='mr-3 opacity-70  ' size={25} />
 
 
@@ -57,8 +57,8 @@ const Hero = () => {
   
         {/*  profile   */}
        
-        <div className='  mx-10 rounded-lg '>
-          <div className=' rounded-lg   bg-white border border-gray-100 justify-start px-4   items-center h-[70px] mt-5 flex gap-5'>
+        <div className='  mx-10 rounded-lg shadow-md '>
+          <div className=' rounded-lg   bg-white justify-start px-4   items-center h-[70px] mt-5 flex gap-5'>
             <Avatar >
               <AvatarImage className='' src="https://github.com/shadcn.png" />
               <AvatarFallback>CN</AvatarFallback>
@@ -100,7 +100,7 @@ const Hero = () => {
       {/*   post  */}
 
      
-        <Post/>
+        <div className=' mx-10 shadow-md mt-10'><Post/></div>
 
      
 
@@ -112,7 +112,7 @@ const Hero = () => {
       {/*   message   */}
 
 
-      <div className='bg-cyan-200  w-[320px]'>
+      <div className='bg-gray-100  w-[320px]'>
 
         message
       </div>
