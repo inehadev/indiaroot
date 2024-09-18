@@ -27,7 +27,8 @@ const Page = () => {
         password
       });
     
-            console.log(response)
+      console.log("SignIn Response:", response); // Added detailed console log
+
           
             if (response?.error) {
                 toast({
@@ -73,7 +74,7 @@ const Page = () => {
                     <h1 className='text-center items-center text-3xl mt-5 opacity-85 font-medium'>Sign-In</h1>
                     <div className='flex-col  mt-8 mx-10'>
 
-                        <Input className='mt-5 py-1' placeholder='email' value={email} type='email' onChange={(e) => setmail(e.target.value)} />
+                        <Input className='mt-5 py-2' placeholder='email' value={email} type='email' onChange={(e) => setmail(e.target.value)} />
                         <Input className='mt-5 py-1' placeholder='password' value={password} type='password' onChange={(e) => setpassword(e.target.value)} />
 
                         <Button className='mt-7 w-full' onClick={handleSignIn}>SIGN-IN</Button>
