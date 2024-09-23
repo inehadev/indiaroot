@@ -1,4 +1,4 @@
-import mongoose, { models, Schema , Document, Mongoose } from "mongoose";
+import mongoose, { models, Schema , Document } from "mongoose";
 
  
 interface userDocument extends Document{
