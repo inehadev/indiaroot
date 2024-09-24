@@ -56,9 +56,11 @@ const Hero = () => {
 
             <div className=' '>
               <Button onClick={() => setshowmodal(true)} className='justify-end bg-blue-600 rounded-full' size={"sm"}>Add New Post<Plus className='ml-1' /></Button>
-           { showmodal && (
-                 <Postmodal onclose={()=>setshowmodal(false)} />
-           )}
+              { showmodal && (
+               
+               <Postmodal  onclose={()=>setshowmodal(false)}  />
+           
+       )}
             </div>
           </div>
           <Separator className='mt-7' />
@@ -126,6 +128,8 @@ const Hero = () => {
           message
         </div>
    </div>
+
+  
    
 
       </>
