@@ -125,7 +125,7 @@ const Hero = () => {
 
         <div className='bg-gray-100  w-[320px]'>
 
-          message
+          {/* message */}
         </div>
    </div>
 
