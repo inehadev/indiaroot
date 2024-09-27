@@ -2,11 +2,16 @@
 import mongoose, { Document, Schema, models } from "mongoose";
 
 interface postDocument extends Document {
-    postedBy: mongoose.Schema.Types.ObjectId,
-    likes: mongoose.Schema.Types.ObjectId
-    text: string,
-    replies: string
-    img:string
+    postedBy: mongoose.Schema.Types.ObjectId;
+  likes: mongoose.Schema.Types.ObjectId[];
+  text: string;
+  replies: {
+    userID: mongoose.Schema.Types.ObjectId;
+    text: string;
+    userProfilePic?: string;
+    username?: string;
+  }[];
+  img?: string;
 }
 
 const postSchema = new Schema<postDocument>({
