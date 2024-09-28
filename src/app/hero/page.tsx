@@ -22,7 +22,7 @@ const Hero = () => {
   const [showmodal, setshowmodal] = useState(false);
   return (
     <>
-      <div className='flex min-h-screen justify-center ' >
+      <div className='flex min-h-screen justify-e ' >
 
         {/*   sidebar   */}
 
@@ -51,7 +51,7 @@ const Hero = () => {
 
         <div className='  bg-opacity-10 '>
 
-          <div className='flex justify-between gap-16 mx-5 mt-8 '> <div className='flex flex-grow  mx-4   rounded-full border py-1 ' > <Input placeholder='Search  for friends , groups or colleges ' className='bg-transparent w-full  border-none placeholder:opacity-90 placeholder:ml-20'>
+          <div className='flex justify-between gap-10 mx-5 mt-8 '> <div className='flex flex-grow  mx-4   rounded-full border py-1 ' > <Input placeholder='Search  for friends , groups or colleges ' className='bg-transparent w-full  border-none placeholder:opacity-90 placeholder:ml-20'>
           </Input><Search className='mr-3 opacity-70  ' size={25} />
 
 
@@ -71,7 +71,7 @@ const Hero = () => {
 
           {/*  profile   */}
 
-          <div className='  mx-10 rounded-lg shadow-md '>
+          <div className='  mx-10 rounded-lg shadow-md  '>
             <div className=' rounded-lg   bg-white justify-start px-4   items-center h-[70px] mt-5 flex gap-5'>
               <Avatar >
                 <AvatarImage className='' src="https://github.com/shadcn.png" />
@@ -124,25 +124,31 @@ const Hero = () => {
         </div>
 
         {/*   message   */}
+        
+        
 
+        <div>
+        <Separator/>
 
-        <div className='bg-gray-100  w-[320px] flex justify-between '>
-          <div className='mt-4'>
+        <div className='   w-[250px] flex justify-between  gap-3'>
+          <div className='mt-7 '>
           <Avatar >
                 <AvatarImage className='' src="https://github.com/shadcn.png" />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
           </div>
-          <div className='flex gap-3 mt-6 rounded-full border border-gray-100'> 
-             <MessageCircleMore />
-             <Bell/>
-             <Settings />
+          <div className='flex gap-3 mt-8 '> 
+            <div className='border border-gray-200  px-2 py-2  rounded-full' > <MessageCircleMore  /></div>
+             <div className='border border-gray-200  px-2 py-2  rounded-full'  ><Bell/></div>
+            <div  className='border border-gray-200 px-2 py-2  rounded-full' > <Settings /></div>
 
           </div>
           
-
-         
+    
         </div>
+        <Separator className='mt-7' />
+        </div>
+
    </div>
 
   
