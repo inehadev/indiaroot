@@ -9,7 +9,7 @@ import CredentialsProvider  from "next-auth/providers/credentials";
 export const authOption : NextAuthOptions={
     providers:[
         CredentialsProvider({
-            id:"crendetials",
+            id:"credentials",
             name:"credentials",
             credentials:{
                 email:{label:"email" , type:"text"},

@@ -30,25 +30,29 @@ const Page = () => {
       console.log("SignIn Response:", response); // Added detailed console log
 
           
-            if (response?.error) {
+            if (response?.ok) {
+                toast({
+                    title: "sucess",
+                    description: "User Logined Sucessfully"
+                 
+
+                })
+                router.replace('/')
+
+
+            } else {
+
+                
                 toast({
                     title: "Failed",
                     description: "Login Failed"
 
                 })
 
-
-            } else {
-                toast({
-                    title: "sucess",
-                    description: "User Logined Sucessfully"
-
-                })
-
-                router.replace('/')
+               
             }
 
-          
+        
 
 
         } catch (error: any) {

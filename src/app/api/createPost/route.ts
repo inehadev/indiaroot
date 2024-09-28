@@ -2,10 +2,25 @@ import dbConnect from "@/lib/dbConnect";
 import { Post } from "@/app/models/postmodel";
 import { postValidation } from "@/app/schemas/postSchema";
 import { v2 as cloudinary} from "cloudinary"
+import  jwt from "jsonwebtoken"
 export async function POST(req:Request){
     await dbConnect();
     try {
-     const body = await req.body;
+     const body = await req.json();
+
+     ////// getting user id //////
+
+     const authHeader = req.headers.get("token");
+     const token = authHeader?.split(" ")[1];
+
+     if(!token){
+        return new Response ("Unauthorized user " , {status:401})
+     }
+
+     const decoded :any =  jwt.verify(token , "neexxtauutthseeccrreet")
+
+     const userID = decoded.userID;
+     console.log(userID);
 
      const { img , text}=postValidation.parse(body);
      
@@ -17,6 +32,7 @@ export async function POST(req:Request){
      }
 
     const newPost =  await Post.create({
+        postedBy:userID,
         text ,
         img : imgurl,
     })

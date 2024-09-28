@@ -3,9 +3,9 @@ import mongoose, { Document, Schema, models } from "mongoose";
 
 interface postDocument extends Document {
     postedBy: mongoose.Schema.Types.ObjectId;
-  likes: mongoose.Schema.Types.ObjectId[];
+  likes?: mongoose.Schema.Types.ObjectId[];
   text: string;
-  replies: {
+  replies?: {
     userID: mongoose.Schema.Types.ObjectId;
     text: string;
     userProfilePic?: string;
@@ -31,7 +31,7 @@ const postSchema = new Schema<postDocument>({
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: "User",
-            required: true
+            // required: true
         }
     ],
     replies: [
@@ -39,7 +39,7 @@ const postSchema = new Schema<postDocument>({
             userID: {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: "User",
-                required: true
+                // required: true
 
             },
             text:{
