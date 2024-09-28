@@ -17,7 +17,7 @@ export async function POST(req:Request){
         return new Response ("Unauthorized user " , {status:401})
      }
 
-     const decoded :any =  jwt.verify(token , "neexxtauutthseeccrreet")
+     const decoded :any =  jwt.verify(token , "NEXT_AUTH_SECRET")
 
      const userID = decoded.userID;
      console.log(userID);

@@ -13,6 +13,9 @@ import { Separator } from "@/components/ui/separator"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import Post from '@/app/component/Post'
 import Postmodal from '@/app/component/postmodal'
+import { MessageCircleMore } from 'lucide-react';
+import { Bell } from 'lucide-react';
+
 
 
 const Hero = () => {
@@ -123,9 +126,22 @@ const Hero = () => {
         {/*   message   */}
 
 
-        <div className='bg-gray-100  w-[320px]'>
+        <div className='bg-gray-100  w-[320px] flex justify-between '>
+          <div className='mt-4'>
+          <Avatar >
+                <AvatarImage className='' src="https://github.com/shadcn.png" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+          </div>
+          <div className='flex gap-3 mt-6 rounded-full border border-gray-100'> 
+             <MessageCircleMore />
+             <Bell/>
+             <Settings />
 
-          {/* message */}
+          </div>
+          
+
+         
         </div>
    </div>
 
