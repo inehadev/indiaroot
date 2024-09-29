@@ -52,7 +52,7 @@ const Hero = () => {
         <div className='  bg-opacity-10 '>
 
           <div className='flex justify-between gap-10 mx-5 mt-8 '> <div className='flex flex-grow  mx-4   rounded-full border py-1 ' > <Input placeholder='Search  for friends , groups or colleges ' className='bg-transparent w-full  border-none placeholder:opacity-90 placeholder:ml-20'>
-          </Input><Search className='mr-3 opacity-70  ' size={25} />
+          </Input><Search className='mr-5 mt-1 opacity-70  ' size={25} />
 
 
           </div>
@@ -132,15 +132,15 @@ const Hero = () => {
 
         <div className='   w-[250px] flex justify-between  gap-3'>
           <div className='mt-7 '>
-          <Avatar >
-                <AvatarImage className='' src="https://github.com/shadcn.png" />
+          <Avatar  >
+                <AvatarImage aria-setsize={5} className='' src="https://github.com/shadcn.png" />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
           </div>
-          <div className='flex gap-3 mt-8 '> 
+          <div className='flex gap-3 mt-8  '> 
             <div className='border border-gray-200  px-2 py-2  rounded-full' > <MessageCircleMore  /></div>
              <div className='border border-gray-200  px-2 py-2  rounded-full'  ><Bell/></div>
-            <div  className='border border-gray-200 px-2 py-2  rounded-full' > <Settings /></div>
+            <div  className='border border-gray-200 px-2 py-2 mr-5  rounded-full' > <Settings /></div>
 
           </div>
           
