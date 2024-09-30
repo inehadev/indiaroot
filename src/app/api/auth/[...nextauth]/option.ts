@@ -21,15 +21,15 @@ export const authOption : NextAuthOptions={
                     const user = await User.findOne({
                     
                             email:credentials.email
-                        
-
-                        
+                
                     })
+                    console.log("user email matched")
 
                     if(!user){
                         throw new Error("user not found")
                     }
                     const ispasswordmatch = await  bcrypt.compare(credentials.password , user.password)
+
                     if(ispasswordmatch){
                         return user;
                     }else{
@@ -37,8 +37,8 @@ export const authOption : NextAuthOptions={
                     }
 
                 } catch (error) {
-                    throw new Error
-                    
+                  console.log(error);
+                  return  null;
                 }
             }
 
@@ -50,10 +50,12 @@ export const authOption : NextAuthOptions={
     },
     callbacks:{
         async jwt ({token , user}){
-            if(user){
-                token.id=user.id
-            }
-            return token;
+            console.log("JWT Callback Triggered"); // Check if this logs
+        if (user) {
+            token.id = user.id;
+        }
+        console.log("Token in JWT:", token); // Check the token
+        return token;
         },
         async session ({session , token}){
             if(token){
@@ -62,7 +64,7 @@ export const authOption : NextAuthOptions={
             return session;
         }
     },
-    secret : process.env.NEXT_AUTH_SECRET
+    secret : process.env.NEXTAUTH_SECRET
 
 }
 
