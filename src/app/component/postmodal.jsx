@@ -11,7 +11,7 @@ const Postmodal = ({onclose}) => {
 
 
   return (
-   <div  className="fixed mt-[50%] inset-0 flex items-center justify-center bg-black bg-opacity-80">
+   <div  className="fixed mt-[50%] inset-0 h-screen  flex items-center justify-center  bg-opacity-80">
     <div className='justify-center place-content-center items-center '>
    <X className='text-black bg-transparent' onClick={onclose} />
      <div className='border border-gray-50'>

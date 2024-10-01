@@ -47,19 +47,19 @@ const Hero = () => {
 
         </div>
 
-        {/*   post  */}
+        {/*   searchbar and add post */}
 
-        <div className=' ml-[250px] mr-[250px] bg-opacity-10 h-screen   '>
+        <div className=' ml-[250px] mr-[250px]  bg-opacity-10 h-screen   z-50  '>
          
-          <div className='flex justify-between gap-10 mx-5 mt-8 '>
-            <div className='flex flex-grow  mx-4   rounded-full border py-1 ' >
-              <Input placeholder='Search  for friends , groups or colleges ' className='bg-transparent w-full  border-none placeholder:opacity-90 placeholder:ml-20'>
+          <div className='flex justify-between gap-4 mx-5 mt-10  mr-[250px]  ml-[250px]  fixed top-0 left-0 right-0 '>
+            <div className='flex flex-grow  mx-4    rounded-full border py-1 ' >
+              <Input placeholder='Search  for friends  ' className='bg-transparent w-full  border-none placeholder:opacity-90 placeholder:ml-20'>
               </Input><Search className='mr-5 mt-1 opacity-70  ' size={25} />
 
 
             </div>
 
-            <div >
+            <div  className='mr-5'>
               <Button onClick={() => setshowmodal(true)} className='justify-end bg-blue-600 rounded-full' size={"sm"}>Add New Post<Plus className='ml-1' /></Button>
               {showmodal && (
 
@@ -69,14 +69,14 @@ const Hero = () => {
             </div>
 
           </div>
-          <Separator className='mt-7' />
+          <Separator className='mt-28  fixed top-0 '  />
 
 
 
-          {/*  profile   */}
+          {/*  highlights  */}
 
-          <div className='  mx-10 rounded-lg shadow-md  '>
-            <div className=' rounded-lg   bg-white justify-start px-4   items-center h-[70px] mt-5 flex gap-5'>
+          <div className='  mx-10   rounded-lg shadow-md  py-2   mt-32  '>
+            <div className=' rounded-lg    justify-start px-3   items-center  bg-white h-[50px]  flex gap-5'>
               <Avatar >
                 <AvatarImage className='' src="https://github.com/shadcn.png" />
                 <AvatarFallback>CN</AvatarFallback>
@@ -127,21 +127,21 @@ const Hero = () => {
 
         </div>
 
-        {/*   message   */}
+        {/*  notification  and   message   */}
 
 
 
-        <div className=' w-[250px] fixed top-0 right-0'>
+        <div className=' fixed top-0 right-0'>
 
 
           <div className='   w-[250px] flex justify-between  gap-3  ' >
-            <div className='mt-7 '>
+            <div className='mt-8'>
               <Avatar  >
                 <AvatarImage aria-setsize={5} className='' src="https://github.com/shadcn.png" />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
             </div>
-            <div className='flex gap-3 mt-8  '>
+            <div className='flex gap-3 mt-9 '>
               <div className='border border-gray-200  px-2 py-2  rounded-full' > <MessageCircleMore /></div>
               <div className='border border-gray-200  px-2 py-2  rounded-full'  ><Bell /></div>
               <div className='border border-gray-200 px-2 py-2 mr-5  rounded-full' > <Settings /></div>
@@ -150,7 +150,7 @@ const Hero = () => {
 
 
           </div>
-          <Separator className='mt-6' />
+         
         </div>
 
       </div>
