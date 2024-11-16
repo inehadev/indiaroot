@@ -1,5 +1,5 @@
 "use client"
-import React , {useState} from 'react'
+import React , {useRef, useState} from 'react'
 import { Input } from '@/components/ui/input'
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from '@/components/ui/button'
@@ -7,6 +7,7 @@ import { X } from 'lucide-react';
 
 
 const Postmodal = ({onclose}) => {
+  const postref = useRef();
     
 
 
